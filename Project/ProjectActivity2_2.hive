@@ -1,0 +1,7 @@
+$ hive> SELECT  COUNT(*)  from episodeIV WHERE INSTR(line, 'Luke') > 0;
+$ hive > INSERT OVERWRITE DIRECTORY '/user/sri/output/episodeiv_results2'
+       > ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+       > SELECT * FROM episodeiv;
+$ hive > INSERT OVERWRITE LOCAL DIRECTORY '/root/episodeiv_results2' 
+       > ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+       > SELECT * FROM episodeiv;
